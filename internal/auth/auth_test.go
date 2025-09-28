@@ -39,15 +39,6 @@ func TestGetAPIKey(t *testing.T) {
 			key: "123abc",
 			err: false,
 		},
-		"Purposefully Failing Test": {
-			input: func() http.Header {
-				header := http.Header{}
-				header.Add("Authorization", "APIKEY 123abc")
-				return header
-			}(),
-			key: "123abc",
-			err: false,
-		},
 	}
 
 	for name, tc := range tests {
